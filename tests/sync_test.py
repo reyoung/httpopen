@@ -9,4 +9,9 @@ class TestHTTPOpen(unittest.TestCase):
 
     def test_http_open_read_chunk(self):
         with http_open("https://httpbin.org/get") as f:
-            self.assertNotEquals(len(f.read(10)), 0)
+            while True:
+                chunk = f.read(10)
+                if not chunk:
+                    break
+                print(chunk)
+                self.assertNotEquals(len(chunk), 0)

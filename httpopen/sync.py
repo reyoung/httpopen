@@ -43,6 +43,7 @@ class SyncHTTPReader:
             yield buf
             self._buf.popleft()
             yield from self._yield_at_least(size - len(buf))
+            return
         yield buf[:size]
         self._buf[0] = buf[size:]
 
