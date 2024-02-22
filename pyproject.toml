@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "httpopen"
+version = "0.1.0"
+dependencies = [
+    "requests",
+]
+
+[tool.distutils.bdist_wheel]
+universal = true
